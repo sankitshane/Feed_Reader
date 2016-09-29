@@ -89,7 +89,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('checking loadfeed', function(done){
-           expect($(".feed").is(':empty')).toBe(false);
+           expect($(".feed .empty").length).not.toBe(0);
            done();
          });
 
