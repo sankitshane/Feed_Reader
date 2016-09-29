@@ -80,6 +80,7 @@ $(function() {
     /* TODO: Write a new test suite named "Initial Entries" */
       describe("Initial Entries", function() {
         beforeEach(function(done) {
+           window.jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
           loadFeed(0,done);
         });
         /* TODO: Write a test that ensures when the loadFeed
@@ -89,7 +90,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('checking loadfeed', function(done){
-           expect($(".feed .empty").length).not.toBe(0);
+           expect($(".feed .entry").length).not.toBe(0);
            done();
          });
 
@@ -98,6 +99,7 @@ $(function() {
       describe('New Feed Selection', function(done) {
         var prev_feed;
         beforeEach(function(done) {
+           window.jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
           loadFeed(1,function() {
             prev_feed = $(".feed").html();
             done();
